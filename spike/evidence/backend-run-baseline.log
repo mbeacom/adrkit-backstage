@@ -1,0 +1,25 @@
+(node:55568) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Loading config from MergedConfigSource{FileConfigSource{path="<repo>/app-config.yaml"}, EnvConfigSource{count=0}}
+2026-10-10T21:41:08.636Z backstage info Found 0 new secrets in config that will be redacted 
+2026-10-10T21:41:08.639Z rootHttpRouter info Listening on :7007 
+2026-10-10T21:41:08.639Z backstage info Plugin initialization started: 'adr', 'adrkit', 'catalog', 'search' type="initialization"
+2026-10-10T21:41:08.804Z search info Added DefaultAdrCollatorFactory collator factory for type adr 
+2026-10-10T21:41:08.843Z catalog info Performing database migration 
+2026-10-10T21:41:08.932Z backstage info Plugin initialization complete, newly initialized: 'adrkit', 'adr', 'search', 'catalog' type="initialization"
+2026-10-10T21:41:08.932Z search info Starting all scheduled search tasks. 
+2026-10-10T21:41:08.976Z search info Registered scheduled task: search_index_adr, {"version":2,"cadence":"PT10M","initialDelayDuration":"PT5S","timeoutAfterDuration":"PT5M"} task="search_index_adr"
+2026-10-10T21:41:08.977Z catalog info Registered scheduled task: catalog_orphan_cleanup, {"version":2,"cadence":"PT30S","timeoutAfterDuration":"PT24S"} task="catalog_orphan_cleanup"
+2026-10-10T21:41:13.980Z search info Collating documents for adr via DefaultAdrCollatorFactory documentType="adr"
+2026-10-10T21:41:13.981Z search info Created new signing key 30b873f3-9f3e-4407-b28a-a38a60814610 
+2026-10-10T21:41:14.006Z rootHttpRouter info [2026-10-10T21:41:14.006Z] "GET /api/search/.backstage/auth/v1/jwks.json HTTP/1.1" 200 196 "-" "node" type="incomingRequest" date="2026-10-10T21:41:14.006Z" method="GET" url="/api/search/.backstage/auth/v1/jwks.json" status=200 httpVersion="1.1" userAgent="node" contentLength=196
+2026-10-10T21:41:14.010Z rootHttpRouter info [2026-10-10T21:41:14.010Z] "GET /api/search/.backstage/auth/v1/jwks.json HTTP/1.1" 200 196 "-" "jose/v5.10.0" type="incomingRequest" date="2026-10-10T21:41:14.010Z" method="GET" url="/api/search/.backstage/auth/v1/jwks.json" status=200 httpVersion="1.1" userAgent="jose/v5.10.0" contentLength=196
+2026-10-10T21:41:14.014Z rootHttpRouter info [2026-10-10T21:41:14.014Z] "GET /api/catalog/entities?fields=kind,metadata.annotations,metadata.name,metadata.namespace,metadata.title&filter=metadata.annotations.backstage.io%2Fadr-location HTTP/1.1" 200 0 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)" type="incomingRequest" date="2026-10-10T21:41:14.014Z" method="GET" url="/api/catalog/entities?fields=kind,metadata.annotations,metadata.name,metadata.namespace,metadata.title&filter=metadata.annotations.backstage.io%2Fadr-location" status=200 httpVersion="1.1" userAgent="node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2026-10-10T21:41:15.078Z backstage info Indexed 60 ADRs from https://github.com/mbeacom/adrkit/tree/8da6a0982cad68b91dcb34e986c4c26071ab9dba/docs/adr documentType="adr"
+2026-10-10T21:41:15.240Z search info Collating documents for adr succeeded documentType="adr"
+2026-10-10T21:41:16.926Z rootHttpRouter info [2026-10-10T21:41:16.926Z] "GET /api/adr/list?url=https%3A%2F%2Fgithub.com%2Fmbeacom%2Fadrkit%2Ftree%2F8da6a0982cad68b91dcb34e986c4c26071ab9dba%2Fdocs%2Fadr HTTP/1.1" 200 19449 "-" "curl/8.7.1" type="incomingRequest" date="2026-10-10T21:41:16.926Z" method="GET" url="/api/adr/list?url=https%3A%2F%2Fgithub.com%2Fmbeacom%2Fadrkit%2Ftree%2F8da6a0982cad68b91dcb34e986c4c26071ab9dba%2Fdocs%2Fadr" status=200 httpVersion="1.1" userAgent="curl/8.7.1" contentLength=19449
+2026-10-10T21:41:16.943Z search info Search request received: term="", filters=undefined, types=adr, pageCursor= 
+2026-10-10T21:41:16.946Z rootHttpRouter info [2026-10-10T21:41:16.946Z] "GET /api/search/query?term=&types%5B0%5D=adr HTTP/1.1" 200 360284 "-" "curl/8.7.1" type="incomingRequest" date="2026-10-10T21:41:16.946Z" method="GET" url="/api/search/query?term=&types%5B0%5D=adr" status=200 httpVersion="1.1" userAgent="curl/8.7.1" contentLength=360284
+2026-10-10T21:41:16.982Z search info Stopping all scheduled search tasks. 
+2026-10-10T21:41:16.982Z search info Task worker finished: search_index_adr task="search_index_adr"
+2026-10-10T21:41:16.982Z catalog info Task worker finished: catalog_orphan_cleanup task="catalog_orphan_cleanup"
