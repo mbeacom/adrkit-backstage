@@ -46,7 +46,7 @@
 | adrkit | ADR-0098 |
 |---|---|
 | Status | superseded |
-| Superseded by | [ADR-0099](?record=0099) |
+| Superseded by | ADR-0099 |
 ```
 
 ### first <table> rendered by react-markdown 8 + remark-gfm 3 (MarkdownContent's renderer)
@@ -67,7 +67,7 @@
 | adrkit | ADR-0021 |
 |---|---|
 | Status | superseded |
-| Superseded by | [ADR-0022](?record=0022) |
+| Superseded by | ADR-0022 |
 ```
 
 ### first <table> rendered by react-markdown 8 + remark-gfm 3 (MarkdownContent's renderer)

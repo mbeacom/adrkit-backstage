@@ -42,7 +42,7 @@
 | adrkit | ADR-0098 |
 |---|---|
 | Status | superseded |
-| Superseded by | [ADR-0099](?record=0099) |
+| Superseded by | ADR-0099 |
 
 
 # ADR-0098: Spike fixture superseded record
@@ -52,7 +52,7 @@
 ### first <table> rendered by react-markdown 8 + remark-gfm 3 (MarkdownContent's renderer)
 
 ```html
-<table><thead><tr><th>adrkit</th><th>ADR-0098</th></tr></thead><tbody><tr><td>Status</td><td>superseded</td></tr><tr><td>Superseded by</td><td><a href="?record=0099">ADR-0099</a></td></tr></tbody></table>
+<table><thead><tr><th>adrkit</th><th>ADR-0098</th></tr></thead><tbody><tr><td>Status</td><td>superseded</td></tr><tr><td>Superseded by</td><td>ADR-0099</td></tr></tbody></table>
 ```
 
 ## 0021-resolve-inbound-source-annotations-without-changing-the-schema.md
@@ -63,7 +63,7 @@
 | adrkit | ADR-0021 |
 |---|---|
 | Status | superseded |
-| Superseded by | [ADR-0022](?record=0022) |
+| Superseded by | ADR-0022 |
 
 
 # ADR-0021: Resolve inbound source annotations without changing the schema
@@ -73,7 +73,7 @@
 ### first <table> rendered by react-markdown 8 + remark-gfm 3 (MarkdownContent's renderer)
 
 ```html
-<table><thead><tr><th>adrkit</th><th>ADR-0021</th></tr></thead><tbody><tr><td>Status</td><td>superseded</td></tr><tr><td>Superseded by</td><td><a href="?record=0022">ADR-0022</a></td></tr></tbody></table>
+<table><thead><tr><th>adrkit</th><th>ADR-0021</th></tr></thead><tbody><tr><td>Status</td><td>superseded</td></tr><tr><td>Superseded by</td><td>ADR-0022</td></tr></tbody></table>
 ```
 
 ## 0051-record-review-state-with-adr-approve-adr-object-and-adr-resolve.md

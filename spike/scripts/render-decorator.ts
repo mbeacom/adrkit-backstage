@@ -65,7 +65,7 @@ async function main() {
   const remarkGfm = (await import('remark-gfm')).default;
   for (const [dir, file] of cases) {
     const decorators = [
-      createAdrkitHeaderDecorator(sets.get(dir)!, id => `?record=${id}`, { replaceFrontMatterTable: !process.env.KEEP_FM_TABLE }),
+      createAdrkitHeaderDecorator(sets.get(dir)!, () => undefined, { replaceFrontMatterTable: !process.env.KEEP_FM_TABLE }),
       adrDecoratorFactories.createRewriteRelativeLinksDecorator(),
       adrDecoratorFactories.createRewriteRelativeEmbedsDecorator(),
       ...(process.env.KEEP_FM_TABLE ? [adrDecoratorFactories.createFrontMatterFormatterDecorator()] : []),

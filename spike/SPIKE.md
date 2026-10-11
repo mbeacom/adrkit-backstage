@@ -18,7 +18,7 @@ document-layer package should pin a version until a record cites this spike.
 > `../../adrkit/docs/adr`, instead of a hard-coded absolute path. The `@adrkit/sdk` `file:` link
 > moved from `../adrkit/packages/sdk` to `../../adrkit/packages/sdk` (in `package.json` and
 > `package-lock.json`) so it still resolves to an adrkit checkout beside this repository.
-> `tsconfig.ci.json` is new; see Reproduce.
+> `tsconfig.ci.json` is new; see Reproduce. Record references in the decorator evidence render as plain text (`ADR-0099`), not `?record=<id>` links: the plugin resolves a record by its entity-relative file path, so an id-only link would not resolve. `scripts/render-decorator.ts` passes `() => undefined` as the link builder, as the spike's wrapper does, and the two `evidence/decorator-output*.md` files were edited to match rather than regenerated.
 
 **Result: the extension points are enough for the document layer.** All five goals pass at the
 pinned versions, with gaps listed below. Rendering does not need reimplementing. Review state
