@@ -1,0 +1,44 @@
+# Spike-only configuration. Not a production config.
+app:
+  baseUrl: http://localhost:3000
+
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+  database:
+    client: better-sqlite3
+    connection: ':memory:'
+  auth:
+    # ======================================================================================
+    # WARNING: SPIKE ONLY. DO NOT COPY THIS SETTING ANYWHERE.
+    # This turns off Backstage's default auth policy so that curl could call plugin routes
+    # without a Backstage token while capturing evidence (SPIKE.md finding F4). With it set,
+    # every plugin route on this backend is reachable unauthenticated. It must never appear
+    # in a package, a dev harness, or any real app-config outside this spike/ directory.
+    # ======================================================================================
+    dangerouslyDisableDefaultAuthPolicy: true
+  reading:
+    allow:
+      - host: github.com
+
+integrations:
+  github:
+    - host: github.com
+      # Optional; unauthenticated works for this public repo but is rate-limited (60 req/h).
+      token: ${GITHUB_TOKEN}
+
+catalog:
+  rules:
+    - allow: [Component, System, API, Resource, Location]
+  locations:
+    - type: file
+      target: ./catalog/adrkit-component.yaml
+
+search:
+  collators:
+    adr:
+      schedule:
+        frequency: { minutes: 10 }
+        timeout: { minutes: 5 }
+        initialDelay: { seconds: 5 }

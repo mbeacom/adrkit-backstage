@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  spike-typecheck:
+    # Typechecks the spike's SDK-free subset (spike/tsconfig.ci.json: five of its eight source
+    # files). The other three import the unpublished @adrkit/sdk through a file: link to an
+    # adrkit checkout, which this job does not provide; `npm ci` leaves that link dangling and
+    # succeeds. Full coverage waits for a published @adrkit/sdk (adrkit ADR-0031, ADR-0053).
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: spike
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: spike/package-lock.json
+      # --ignore-scripts: tsc needs none of the native builds (better-sqlite3, esbuild, keytar, ...).
+      - name: Install dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Typecheck the SDK-free subset
+        run: npx tsc --noEmit -p tsconfig.ci.json

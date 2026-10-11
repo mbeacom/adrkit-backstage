@@ -1,0 +1,12 @@
+{
+  "//": "CI-only, narrower than tsconfig.json. It typechecks every spike file that does not import the unpublished @adrkit/sdk, so it needs no adrkit checkout beside this repository. src/backend/adrkitTier1Plugin.ts, src/backend/index.ts (which imports it), and scripts/render-decorator.ts import @adrkit/sdk through a file: link (SPIKE.md F5) and are checked only by `npm run typecheck` with that checkout present. Delete this file once @adrkit/sdk publishes and the spike depends on the published package (adrkit ADR-0031, ADR-0053).",
+  "extends": "./tsconfig.json",
+  "include": [],
+  "files": [
+    "src/backend/adrInfoParserModule.ts",
+    "src/backend/searchCollatorModule.ts",
+    "src/frontend/adrkitHeaderDecorator.ts",
+    "src/frontend/AdrkitEntityAdrContent.tsx",
+    "src/shared/adrkitFrontmatter.ts"
+  ]
+}

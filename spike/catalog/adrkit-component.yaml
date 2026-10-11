@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: adrkit
+  title: adrkit
+  annotations:
+    # Pinned to an adrkit commit so the evidence is reproducible.
+    backstage.io/adr-location: https://github.com/mbeacom/adrkit/tree/8da6a0982cad68b91dcb34e986c4c26071ab9dba/docs/adr
+spec:
+  type: library
+  lifecycle: experimental
+  owner: user:default/mbeacom
